@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lovelilyxx</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    :root {
+      --bg: #fff0f5;
+      --text: #333;
+      --accent: #ff69b4;
+      --section-bg: #fff;
+    }
+    .dark-mode {
+      --bg: #1e1e1e;
+      --text: #f8f8f8;
+      --accent: #ff69b4;
+      --section-bg: #333;
+    }
+    header {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-image: linear-gradient(rgba(255, 105, 180, 0.3), rgba(255, 105, 180, 0.3)), url('https://i.postimg.cc/PqRCWVRY/Lovelily8.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background-color: var(--section-bg);
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    #gallery, #about, #contact {
+      background-color: var(--section-bg);
+      padding: 1.5rem;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .about {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .contact {
+      margin-top: 3rem;
+      text-align: center;
+    }
+    .contact a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--accent);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .contact a:hover {
+      background-color: #e754a2;
+    }
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background-color: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+    .toggle-btn:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: 2.5rem;
+      right: 0.5rem;
+      background-color: #000;
+      color: #fff;
+      font-size: 0.8rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #ffe4e1;
+      color: #666;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-btn" id="modeToggle" onclick="toggleMode()" data-tooltip="Dark Mode">🌙</button>
+  <header>
+    <h1>LoveLilyXX</h1>
+    <p>Exclusive pictures and videos for those who crave more than ordinary…</p>
+  </header>
+  <nav>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About Me</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="container">
+    <section id="gallery">
+      <h2>Preview Gallery</h2>
+      <div class="gallery">
+        <img src="https://i.postimg.cc/vZQh9sBV/Lovelily2.jpg" alt="LoveLilyXX Preview 1">
+        <img src="https://i.postimg.cc/yYhnkdVK/Lovelily3.jpg" alt="LoveLilyXX Preview 2">
+        <img src="https://i.postimg.cc/28N2kvNT/Lovelily4.jpg" alt="LoveLilyXX Preview 3">
+        <img src="https://i.postimg.cc/jj5WJYZR/Lovelily6.jpg" alt="LoveLilyXX Preview 4">
+        <img src="https://i.postimg.cc/CxJB1xCv/Lovelily7.jpg" alt="LoveLilyXX Preview 5">
+        <img src="https://i.postimg.cc/W1sqTkZF/Lovelily9.jpg" alt="LoveLilyXX Preview 6">
+      </div>
+    </section>
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <p>A little danger. A lot of velvet.<br>
+      🖤 Night dancer | Shadow muse | Alt beauty<br>
+      Tattoos, stilettos, and secrets I won’t tell<br>
+      For those who crave more than ordinary…<br>
+      Book me. Worship me. Remember me.</p>
+    </section>
+   <section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <a href="https://www.instagram.com/lovelily_sx?igsh=ZGV5bmd2NGJwdGx3&utm_source=qr" target="_blank">Instagram</a>
+  <a href="https://www.facebook.com/share/16cwswQjKk/?mibextid=wwXIfr" target="_blank">Facebook</a>
+  <a href="mailto:lovelilysoleil@outlook.com" class="email-fallback" title="Or email me at: lovelilysoleil@outlook.com">Email Me</a>
+  <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text);">
+    If the button doesn't work, email me at: <strong>lovelilysoleil@outlook.com</strong>
+  </p>
+  <a href="https://www.amazon.com/hz/wishlist/ls/1FNVJ72O8ACXD?ref=cm_sw_wa_r_un_un_OpMkOLyGhZDi2" target="_blank"
+     style="background-color: #ff66a3; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.3s;
+     display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; border-radius: 8px; color: white; text-decoration: none;">
+    💝 My Wishlist
+  </a>
+</section>
+
+  </div>
+  <footer>
+    &copy; 2024 LoveLilyXX. All rights reserved.
+  </footer>
+  <script>
+    function toggleMode() {
+      const body = document.body;
+      const toggle = document.getElementById('modeToggle');
+      body.classList.toggle('dark-mode');
+      const dark = body.classList.contains('dark-mode');
+      toggle.innerHTML = dark ? '☀️' : '🌙';
+      toggle.setAttribute('data-tooltip', dark ? 'Light Mode' : 'Dark Mode');
+    }
+  </script>
+</body>
+</html>
