@@ -58,6 +58,23 @@
     header h1 { animation-delay: 0.3s; }
     header p { animation-delay: 0.6s; }
 
+    .toggle-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: transparent;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text);
+      transition: transform 0.2s ease;
+    }
+
+    .toggle-btn:hover {
+      color: #ff69b4;
+      text-shadow: 0 0 8px #ff69b4;
+    }
+
     nav {
       display: flex;
       justify-content: center;
@@ -105,23 +122,6 @@
       box-shadow: 0 15px 30px rgba(255, 105, 180, 0.4);
     }
 
-    .toggle-btn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background-color: transparent;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--text);
-      transition: transform 0.2s ease;
-    }
-
-    .toggle-btn:hover {
-      color: #ff69b4;
-      text-shadow: 0 0 8px #ff69b4;
-    }
-
     .about {
       text-align: center;
       margin-top: 3rem;
@@ -140,11 +140,12 @@
       color: white;
       border-radius: 8px;
       text-decoration: none;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.3s;
     }
 
     .contact a:hover {
       background-color: #e754a2;
+      transform: scale(1.05);
     }
 
     footer {
@@ -197,23 +198,23 @@
     <section id="about" class="about">
       <h2>About Me</h2>
       <p>A little danger. A lot of velvet.<br>
-      🖤 Night dancer | Shadow muse | Alt beauty<br>
-      Tattoos, stilettos, and secrets I won’t tell<br>
-      For those who crave more than ordinary…<br>
-      Book me. Worship me. Remember me.</p>
+        🖤 Night dancer | Shadow muse | Alt beauty<br>
+        Tattoos, stilettos, and secrets I won’t tell<br>
+        For those who crave more than ordinary…<br>
+        Book me. Worship me. Remember me.</p>
     </section>
 
     <section id="contact" class="contact">
       <h2>Contact Me</h2>
-      <a href="https://www.instagram.com/lovelily_sx" target="_blank">Instagram</a>
-      <a href="https://www.facebook.com/share/16cwswQjKk" target="_blank">Facebook</a>
-      <a href="mailto:lovelilysoleil@outlook.com" class="email-fallback">Email Me</a>
-      <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+      <a href="https://www.instagram.com/lovelily_sx?igsh=ZGV5bmd2NGJwdGx3&utm_source=qr" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/share/16cwswQjKk/?mibextid=wwXIfr" target="_blank">Facebook</a>
+      <a href="mailto:lovelilysoleil@outlook.com" class="email-fallback" title="Email me directly">Email Me</a>
+      <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text);">
         If the button doesn't work, email me at: <strong>lovelilysoleil@outlook.com</strong>
       </p>
-      <a href="https://www.amazon.com/hz/wishlist/ls/1FNVJ72O8ACXD" target="_blank"
-        style="background-color: #ff66a3; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.3s;
-        display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; border-radius: 8px; color: white; text-decoration: none;">
+      <a href="https://www.amazon.com/hz/wishlist/ls/1FNVJ72O8ACXD?ref=cm_sw_wa_r_un_un_OpMkOLyGhZDi2" target="_blank"
+         style="background-color: #ff66a3; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.3s;
+         display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; border-radius: 8px; color: white; text-decoration: none;">
         💝 My Wishlist
       </a>
     </section>
@@ -268,282 +269,7 @@
     }
 
     window.onload = () => {
-      renderGallery(lightImages); // Load light mode by default
-    };
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LovelilyXX</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WVDLBXE347"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-WVDLBXE347');
-  </script>
-
-  <style>
-    :root {
-      --bg: #fff0f5;
-      --text: #333;
-      --accent: #ff69b4;
-      --section-bg: #fff;
-    }
-
-    .dark-mode {
-      --bg: #1e1e1e;
-      --text: #f8f8f8;
-      --accent: #ff69b4;
-      --section-bg: #333;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Raleway', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      transition: background-color 0.5s ease, color 0.5s ease;
-      animation: bodyFadeIn 0.8s ease;
-    }
-
-    header {
-      padding: 4rem 2rem;
-      text-align: center;
-      background-image: linear-gradient(rgba(255, 105, 180, 0.3), rgba(255, 105, 180, 0.3)), url('https://i.postimg.cc/PqRCWVRY/Lovelily8.jpg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      position: relative;
-    }
-
-    header h1, header p {
-      opacity: 0;
-      transform: translateY(-10px);
-      animation: fadeDown 1s ease forwards;
-    }
-
-    header h1 { animation-delay: 0.3s; }
-    header p { animation-delay: 0.6s; }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      background-color: var(--section-bg);
-      padding: 1rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .container {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    #gallery, #about, #contact {
-      background-color: var(--section-bg);
-      padding: 1.5rem;
-      border-radius: 8px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      opacity: 0;
-      animation: fadeIn 0.8s ease forwards;
-      transform: scale(0.95);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 15px 30px rgba(255, 105, 180, 0.4);
-    }
-
-    .toggle-btn {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background-color: transparent;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--text);
-      transition: transform 0.2s ease;
-    }
-
-    .toggle-btn:hover {
-      color: #ff69b4;
-      text-shadow: 0 0 8px #ff69b4;
-    }
-
-    .about {
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    .contact {
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .contact a {
-      display: inline-block;
-      margin: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      background-color: var(--accent);
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-
-    .contact a:hover {
-      background-color: #e754a2;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background-color: #ffe4e1;
-      color: #666;
-      margin-top: 3rem;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    @keyframes fadeDown {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes bodyFadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <button class="toggle-btn" id="modeToggle" onclick="toggleMode()" data-tooltip="Spicy Mode">🌶️</button>
-    <h1>LoveLilyXX</h1>
-    <p>Exclusive pictures and videos for those who crave more than ordinary…</p>
-  </header>
-
-  <nav>
-    <a href="#gallery">Gallery</a>
-    <a href="#about">About Me</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <div class="container">
-    <section id="gallery">
-      <h2>Preview Gallery</h2>
-      <div class="gallery" id="galleryContainer"></div>
-    </section>
-
-    <section id="about" class="about">
-      <h2>About Me</h2>
-      <p>A little danger. A lot of velvet.<br>
-      🖤 Night dancer | Shadow muse | Alt beauty<br>
-      Tattoos, stilettos, and secrets I won’t tell<br>
-      For those who crave more than ordinary…<br>
-      Book me. Worship me. Remember me.</p>
-    </section>
-
-    <section id="contact" class="contact">
-      <h2>Contact Me</h2>
-      <a href="https://www.instagram.com/lovelily_sx" target="_blank">Instagram</a>
-      <a href="https://www.facebook.com/share/16cwswQjKk" target="_blank">Facebook</a>
-      <a href="mailto:lovelilysoleil@outlook.com" class="email-fallback">Email Me</a>
-      <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-        If the button doesn't work, email me at: <strong>lovelilysoleil@outlook.com</strong>
-      </p>
-      <a href="https://www.amazon.com/hz/wishlist/ls/1FNVJ72O8ACXD" target="_blank"
-        style="background-color: #ff66a3; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.2); transition: transform 0.3s;
-        display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; border-radius: 8px; color: white; text-decoration: none;">
-        💝 My Wishlist
-      </a>
-    </section>
-  </div>
-
-  <footer>
-    &copy; 2024 LoveLilyXX. All rights reserved.
-  </footer>
-
-  <script>
-    const lightImages = [
-      "https://i.postimg.cc/yYhnkdVK/Lovelily3.jpg",
-      "https://i.postimg.cc/28N2kvNT/Lovelily4.jpg",
-      "https://i.postimg.cc/15tZzBw3/Nature1.jpg",
-      "https://i.postimg.cc/L6bFgP3B/Nature2.jpg",
-      "https://i.postimg.cc/KzfVN2rh/Nature3.jpg",
-      "https://i.postimg.cc/x1YtC7Vw/Spicy7.jpg"
-    ];
-
-    const spicyImages = [
-      "https://i.postimg.cc/0jwcM1Qs/Spicy2.jpg",
-      "https://i.postimg.cc/9MSLQQcb/Spicy3.jpg",
-      "https://i.postimg.cc/y6MfqxQY/Spicy4.jpg",
-      "https://i.postimg.cc/dQkWSr9x/Spicy5.jpg",
-      "https://i.postimg.cc/rwJgtJ8K/Spicy6.jpg",
-      "https://i.postimg.cc/vZQh9sBV/Lovelily2.jpg",
-      "https://i.postimg.cc/jj5WJYZR/Lovelily6.jpg",
-      "https://i.postimg.cc/CxJB1xCv/Lovelily7.jpg",
-      "https://i.postimg.cc/W1sqTkZF/Lovelily9.jpg"
-    ];
-
-    function renderGallery(images) {
-      const container = document.getElementById('galleryContainer');
-      container.innerHTML = '';
-      images.forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = "Preview";
-        container.appendChild(img);
-      });
-    }
-
-    function toggleMode() {
-      const body = document.body;
-      const toggle = document.getElementById('modeToggle');
-      const isDark = body.classList.toggle('dark-mode');
-
-      toggle.innerHTML = isDark ? '🌞' : '🌶️';
-      toggle.setAttribute('data-tooltip', isDark ? 'Light Mode' : 'Spicy Mode');
-
-      renderGallery(isDark ? spicyImages : lightImages);
-    }
-
-    window.onload = () => {
-      renderGallery(lightImages); // Load light mode by default
+      renderGallery(lightImages); // default
     };
   </script>
 </body>
